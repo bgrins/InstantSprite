@@ -1,0 +1,13 @@
+
+web-build/*
+util/makelive.sh
+util/sync.sh
+
+# OS generated files #
+######################
+*~
+*.swp
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
