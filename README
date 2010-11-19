@@ -1,0 +1,13 @@
+Instant Sprite:
+A fast browser-based CSS Sprite Generator.
+Uses HTML Canvas and JavaScript FileReader to generate CSS Sprites as quickly as possible.
+
+Instant Sprite is open source under MIT License.  See LICENSE.
+
+Makes use of many open source components:
+jQuery - http://jquery.com/
+jQuery UI/Sortable - http://jqueryui.com/
+RequireJS - http://requirejs.org/
+filereader.js - http://github.com/bgrins/filereader.js
+jquery-tmpl - http://github.com/jquery/jquery-tmpl
+famfamfam silk icons - http://code.google.com/p/famfamfam/wiki/silk_icons_gif
