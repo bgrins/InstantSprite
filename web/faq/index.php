@@ -9,8 +9,8 @@ include('../includes/header.php');
 <li><a href='#how'>How do I use CSS Sprites?</a></li>
 <li><a href='#upload'>Do my files get uploaded to your server?</a></li>
 <li><a href='#support'>What browsers are supported?</a></li>
-<li><a href='#oss'>What open source software is used?</a></li>
-<li><a href='#who'>Who are you?</a></li>
+<li><a href='#oss'>Is Instant Sprite open source?</a></li>
+<li><a href='#who'>Who is working on Instant Sprite?</a></li>
 </ul>
 
 <h3><a name="why">Why did you make Instant Sprite?</a></h3>
@@ -49,9 +49,10 @@ If you are just starting out, I would recommend <a href='../articles/what-are-cs
 
 Safari has support planned for a future release.  An updated list can be found on the "<a href='http://caniuse.com/#feat=fileapi'>When can I use</a>" site.
 
-<h3><a name="oss">What open source software is used?</a></h3>
+<h3><a name="oss">Is Instant Sprite open source?</a></h3>
 
-<p>Instant Sprite uses some excellent open source software.  Here is a listing:</p>
+<p><strong>Yes.</strong>  See the code at <a href='http://github.com/bgrins/InstantSprite'>http://github.com/bgrins/InstantSprite</a>.  Additionally, Instant Sprite makes use of some excellent open source software.  Here is a listing:</p>
+
 <ul>
 <li><a href='http://jquery.com/'>jQuery</a></li>
 <li><a href='http://jqueryui.com/'>jQuery UI (Sortable)</a></li>
@@ -61,10 +62,9 @@ Safari has support planned for a future release.  An updated list can be found o
 <li><a href='http://code.google.com/p/famfamfam/wiki/silk_icons_gif'>famfamfam silk icons</a></li>
 </ul>
 
-<h3><a name="who">Who are you?</a></h3>
+<h3><a name="who">Who is working on Instant Sprite?</a></h3>
 
-<p>All code unless otherwise specified was written by me, Brian Grinstead.  You can view my website at <a href='http://briangrinstead.com'>briangrinstead.com</a> or see some of my open source code at <a href='http://github.com/bgrins'>github</a>.</p>
-
+<p>The original work was done by <a href='http://briangrinstead.com'>Brian Grinstead</a>.  Any other contributors will be listed on the <a href='http://github.com/bgrins/InstantSprite/contributors'>contributors page</a> for the project.</p>
 
 <?
 include('../includes/footer.php');
