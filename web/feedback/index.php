@@ -1,6 +1,6 @@
 <? 
 $title = 'Feedback';
-$hidetitle = false;
+$hidetitle = true;
 $description = 'Feedback for Instant Sprite, the CSS Sprite Generator.';
 include('../includes/header.php');
 ?>

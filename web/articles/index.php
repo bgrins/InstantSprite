@@ -1,11 +1,13 @@
 <?
 $title = 'Articles';
+$hidetitle = true;
 $description = 'Articles and examples about CSS Sprite generation, CSS Sprite techniques, What Are CSS Sprites, etc.';
 include('../includes/header.php');
 ?>
 
-<div class='info'>These articles and examples are a work in progress.  Look for new and updated articles soon.</div>
+<div class='info'>Note: these articles and examples are still being developed.  Look for new and updated articles soon.</div>
 
+<h2>Articles</h2>
 <ul>
 <li>
 <a href='what-are-css-sprites/'>What are CSS sprites and when would I use them?</a>  CSS sprites are a method for minimizing image requests for a web page.  This article gives a brief overview of CSS sprites.
