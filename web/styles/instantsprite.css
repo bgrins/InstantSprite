@@ -117,8 +117,9 @@ form { margin: 0; padding: 0; }
 
 /* Example articles specific styles */
 #example section.demo { margin:15px 10px 25px 10px; padding:5px; border: solid 2px #444; }
-#example section.demo:before { content: 'demo:'; display:block; font-weight:bold; color:#999;font-size:1.1em; }
+#example section.demo:before { content: 'demo:'; display:block; font-weight:bold; color:#999; margin-bottom:1em; }
 #example section.demo.images { text-align: center;}
+#example section.demo.images:before { content:'';}
 #example section.demo.images img { padding: 0 3px; border: dashed 1px #99a;}
 #example pre.css, #example pre.html { text-align:left; border: solid 1px #ddd; margin:3px; margin-top:9px; padding: 4px; word-wrap:break-word; }
 #example pre.css:before { content: 'style type="text/css"'; display:block; font-weight:bold;margin-bottom: 1em; } 
