@@ -30,15 +30,6 @@ include('../includes/header.php');
 </li>
 </ul>
 
-<h2>Links</h2>
-<p>There have been many other articles written about CSS sprites.  Here are some external sites that may help to get started, or provide more information.</p>
-<ul>
-<li><a href='http://www.alistapart.com/articles/sprites'>A List Apart</a></li>
-<li><a href='http://www.smashingmagazine.com/2009/04/27/the-mystery-of-css-sprites-techniques-tools-and-tutorials/'>Smashing Magazine</a></li>
-<li><a href='http://developer.yahoo.com/performance/rules.html'>Yahoo Developer Network</a></li>
-<li><a href='http://code.google.com/speed/page-speed/docs/rtt.html#SpriteImages'>Google Page Speed</a></li>
-</ul>
-
 <?
 include('../includes/footer.php');
 ?>
