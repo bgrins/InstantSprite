@@ -411,8 +411,7 @@ sprite.init = function() {
 	
 	elements.exportCss.val("");
 	elements.fileInputShortcut.click(function() { elements.fileInput.click(); return false; });
-	elements.cssTemplateInputs.each(fitToWidth).bind("keyup keydown", fitToWidth);
-	elements.cssTemplateInputs.each(fitToWidth).bind("keyup", sprite.setrules);
+	elements.cssTemplateInputs.fitInputToWidth().keyup(sprite.setrules);
 	elements.options.change(sprite.mergefiles).submit(false);
 	elements.optionOffset.bind("keyup", function() {
 		var val = $(this).val();
@@ -482,26 +481,5 @@ var delay = (function() {
 	}
 })();
 
-// fitToWidth:
-// Keep an input's width in sync with it's text.  Seems like there should
-// be an easier way to do this.  Oh well...
-function fitToWidth() {
-	var input = $(this),
-		outerDiff = input.outerWidth(true) - input.width(),
-		text = (input.val() || input.attr("placeholder")) + "|",
-		el = $("<span />").text(text).css({
-				position:'absolute',
-				visibility: 'hidden',
-				fontSize: input.css("font-size"),
-				fontFamily: input.css("font-family"),
-				top: -100, 
-				left: -100
-			}).appendTo($("body")),
-		measuredWidth = el.width();
-	
-	el.remove();
-	
-	input.width(measuredWidth + outerDiff);
-}
 
 })(sprite, document, window);
