@@ -5,6 +5,18 @@ function log() {
 	}
 };
 
+// delay:
+// only call a function after a timeout, to prevent rapid fire calls	
+var delay = (function() {
+	var timeouts = { };
+	return function(cb, timeout) {
+		if (timeouts[cb]) {
+			clearTimeout(timeouts[cb]);
+		}
+		timeouts[cb] = setTimeout(cb, timeout);
+	}
+})();
+
 // Small jQuery plugin definitions
 (function($) {
 
