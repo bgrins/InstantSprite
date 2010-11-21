@@ -17,7 +17,7 @@ function loadExample() {
 			$('#' + linkedTo).append(pre)
 		}
 		else {
-			$(document.body).append(pre);
+			$('#example').append(pre);
 		}
 	});
 

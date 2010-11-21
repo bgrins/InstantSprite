@@ -116,8 +116,6 @@ form { margin: 0; padding: 0; }
 #feedback input[type=text], #feedback textarea { width:20em; } 
 
 /* Example articles specific styles */
-#example h2 { font-family:arial;}
-#example p { padding-right:25px; }
 #example section.demo { margin: 10px; margin-top:15px; padding:5px; border: solid 2px #444; }
 #example section.demo.images { text-align: center;}
 #example section.demo.images img { padding: 0 3px; border: dashed 1px #99a;}
