@@ -23,10 +23,7 @@ include('../includes/header.php');
 <a href='diagonal-sprites/'>Diagonal Sprites</a>: great for top left aligning sprites to long blocks of text that works cross browser with no extra markup.  Best to use small icons with low offsets to prevent using too much memory, as the image dimensions are large.  See <a href='http://www.aaronbarker.net/2010/07/diagonal-sprites/'>Diagonal Sprites by Aaron Barker</a>.
 </li>
 <li>
-<a href='right-aligned-sprites/'>Right aligned sprites</a>: Used for an icon next to long blocks of text.  Uses extra markup, but is cross browser.
-</li>
-<li>
-<a href='right-aligned-sprites-after-pseudoclass/' class='experimental'>Right aligned sprites using :after pseudoclass</a>: A technique I came up with that can give you right aligned sprites with no extra markup, but relies on the :after CSS pseudoclass, which is not supported in IE<=7.
+<a href='right-aligned-sprites/'>Right aligned sprites</a>: When you want an icon right aligned next to long blocks of text.
 </li>
 </ul>
 
