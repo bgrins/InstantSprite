@@ -69,6 +69,7 @@ var resultCanvas = document.createElement("canvas"),
 var templates = {
 	'loadedImage': '<li class="clearfix"><div class="controls"><span class="remove">✖</span></div><canvas></canvas><span class="name">${name}</span><input class="hide" value="${extra.nameNoExtension}" /> <span class="details"><strong>type:</strong> ${type} | <strong>size:</strong> ${extra.prettySize}</span>',
 	'fileNotImage': '<li><div class="controls"><span class="remove">✖</span></div>The file "${name}" is not identified as an image.  It\'s type is: ${type || "unknown"}.  Skipping the file.  If you think this is in error, please leave <a href="feedback/" target="_blank" class="normal">feedback</a> telling me what happened.</li>',
+	'fileLoadError': '<li><div class="controls"><span class="remove">✖</span></div>Error loading file</li>',
 	'fileTooBig': '<li><div class="controls"><span class="remove">✖</span></div>The file "${name}" is too big (${extra.prettySize}).  Spriting work best with small images (like icons or buttons).</li>',
 	'duplicate': 'You have two images with the same name (${name}).  The class names are automatically generated based on your file name (but you can change them later).  It will be easier if you get rid of any duplicate images.'
 };
@@ -165,8 +166,8 @@ sprite.fileReaderOpts = {
 		progress: function(e) {
 			//log("progress", e)
 		},
-		error: function() {
-		
+		error: function(e) {
+			elements.fileWarnings.append($.tmpl( "fileLoadError", e ));
 		},
 		skip: function(file) {
 		
