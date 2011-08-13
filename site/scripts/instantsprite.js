@@ -1,6 +1,11 @@
 
-(function(sprite, document, window, undefined) {
-	
+
+
+
+(function(window, undefined) {
+
+var sprite = window.sprite = { };
+var document = window.document;
 var elements = sprite.elements = {
 	fileInput: '#fileInput',
 	fileInputShortcut: '#fileInputShortcut',
@@ -472,4 +477,4 @@ function fitDropboxToScreen() {
 
 
 
-})(sprite, document, window);
+})(window);

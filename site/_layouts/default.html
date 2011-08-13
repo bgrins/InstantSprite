@@ -24,7 +24,7 @@
 <section>
   {{ content }}
 </section>
-<script src="{{ page.relative }}scripts/require-jquery.js?v={{site.time}}"></script>
+<script src="{{ page.relative }}scripts/jquery-1.6.5.js?v={{ site.time | date_to_xmlschema }}"></script>
 <script type="text/javascript" src="{{ page.relative }}scripts/site.js"></script>
 <script type="text/javascript">loadExample();</script>
 
