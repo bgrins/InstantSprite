@@ -19,6 +19,7 @@ task :build do
   end
   
   system("jekyll")
+  system("cp site/.htaccess site-build/")
   
   app = File.read APP_PATH
   FRAMEWORK_FILES = app.scan(SCRIPTS).collect { |x| x[0].split('/').last }

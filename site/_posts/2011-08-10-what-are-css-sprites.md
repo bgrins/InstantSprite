@@ -8,10 +8,9 @@ example: true
 {{ page.title }}
 ================
 
-
 <style type='text/css' data-linked='sprite-demo'>
 
-.sprite { background: url('icon.png') no-repeat top left; padding-left: 20px; line-height: 16px;  } 
+.sprite { background: url('../../styles/articles/icon.png') no-repeat top left; padding-left: 20px; line-height: 16px;  } 
 .sprite.delete { background-position: 0px 0px;  } 
 .sprite.group { background-position: 0px -26px;  } 
 .sprite.help { background-position: 0px -52px;  } 
@@ -21,9 +20,9 @@ example: true
 <style type='text/css' data-linked='nosprite-demo'>
 
 .nosprite { padding-left: 20px; line-height:16px; background-repeat: no-repeat; }
-.nosprite.help { background-image: url('help.png'); }
-.nosprite.delete { background-image: url('delete.png'); }
-.nosprite.group { background-image: url('group.png'); }
+.nosprite.help { background-image: url('../../styles/articles/help.png'); }
+.nosprite.delete { background-image: url('../../styles/articles/delete.png'); }
+.nosprite.group { background-image: url('../../styles/articles/group.png'); }
 
 </style>
 
