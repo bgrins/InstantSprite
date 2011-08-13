@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Right Aligned Sprites
+description: Right aligning css sprites.
+example: true
 ---
 
 {{ page.title }}

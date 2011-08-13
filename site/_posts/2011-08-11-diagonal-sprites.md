@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Diagonal Sprites
+description: Diagonal CSS Sprites
 ---
 
 {{ page.title }}

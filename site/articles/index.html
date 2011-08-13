@@ -2,10 +2,13 @@
 layout: default
 title: Articles
 relative: ../
+description: Articles and examples about CSS Sprite generation, CSS Sprite techniques, What Are CSS Sprites, etc.
 ---
+
+<h2>Articles</h2>
 
 <ul id="archive">
 {% for post in site.posts %}
-<li><a href="{{ }}{{ post.url }}">{{ post.title }}</a> <abbr>{{ post.date | date_to_string }}</abbr>.  <p>{{ post.description }}</p></li>
+<li><a href="{{ }}{{ post.url }}">{{ post.title }}</a>: {{ post.description }}</li>
 {% endfor %}
 </ul>

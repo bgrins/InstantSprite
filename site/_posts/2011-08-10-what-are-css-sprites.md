@@ -1,6 +1,8 @@
 ---
 layout: post
 title: What are CSS Sprites?
+description: A CSS sprite is a combination of multiple images, separated with CSS.  CSS Sprites make your page more efficient by limiting the number of HTTP requests for images.
+example: true
 ---
 
 {{ page.title }}
