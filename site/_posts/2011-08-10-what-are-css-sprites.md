@@ -8,6 +8,8 @@ example: true
 {{ page.title }}
 ================
 
+<div>
+
 <style type='text/css' data-linked='sprite-demo'>
 
 .sprite { background: url('../../styles/articles/icon.png') no-repeat top left; padding-left: 20px; line-height: 16px;  } 
@@ -49,7 +51,7 @@ Your links look great, but you decide spice it up a little bit with some images.
 </p>
 
 <section class='demo images viewsource'>
-<img src='delete.png' /> <img src='group.png' /> <img src='help.png' />
+<img src='../../delete.png' /> <img src='../../group.png' /> <img src='../../help.png' />
 </section>
 
 <p>
@@ -116,4 +118,6 @@ If you want to <a href='<?=$docroot?>'>generate CSS sprites</a>, check out Insta
 <li><a href='http://developer.yahoo.com/performance/rules.html'>Yahoo Developer Network</a></li>
 <li><a href='http://code.google.com/speed/page-speed/docs/rtt.html#SpriteImages'>Google Page Speed</a></li>
 </ul>
+
+</div>
 

@@ -21,9 +21,7 @@
       {% if page.title == link.text %}
         {% assign current = 'current' %}
       {% endif %}
-
         <a class="icon {{ link.class }} {{ current }}" href="{{ page.relative }}{{ link.url }}">{{ link.text }}</a>
-      
     {% endfor %}
 </div>
 </header>

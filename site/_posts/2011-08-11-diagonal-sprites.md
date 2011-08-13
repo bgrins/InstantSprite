@@ -1,13 +1,14 @@
 ---
 layout: post
 title: Diagonal Sprites
-description: Diagonal CSS sprites can be good for top left aligning sprites to long blocks of text that works cross browser with no extra markup. Best to use small icons with low offsets to prevent using too much memory, as the image dimensions are large. See <a href="http://www.aaronbarker.net/2010/07/diagonal-sprites/">Diagonal Sprites by Aaron Barker</a>. 
+description: Diagonal CSS sprites can be good for top left aligning sprites to long blocks of text that works cross browser with no extra markup. Best to use small icons with low offsets to prevent using too much memory, as the image dimensions are large. 
+extradescription: See <a href="http://www.aaronbarker.net/2010/07/diagonal-sprites/">Diagonal Sprites by Aaron Barker</a>.
 ---
 
 {{ page.title }}
 ================
 
-<p class="meta">18 October 2010 - San Francisco</p>
+<div>
 
 <style type="text/css">
 .spritediagonal { position:relative; padding-left:20px; background:url(../../styles/articles/sprite-diagonal.png) transparent no-repeat; }
@@ -29,3 +30,5 @@ description: Diagonal CSS sprites can be good for top left aligning sprites to l
 <p class="spritediagonal accept">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
 
 <p class="spritediagonal anchor">Lorem Ipsum...</p>
+
+<>
