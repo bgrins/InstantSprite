@@ -14,19 +14,26 @@
 
 <header>
 <h1><a href='{{ page.relative }}'>Instant Sprite</a></h1>
+
 <div class='links'>
-<a href='{{ page.relative }}articles/' class='icon page_white_stack'>Articles</a>
-<a href='{{ page.relative }}faq/' class='icon help'>FAQ</a>
-<a href='{{ page.relative }}feedback/' class='icon comments'>Feedback</a>
+    {% for link in site.navigation %}
+      {% assign current = nil %}
+      {% if page.title == link.text %}
+        {% assign current = 'current' %}
+      {% endif %}
+
+        <a class="icon {{ link.class }} {{ current }}" href="{{ page.relative }}{{ link.url }}">{{ link.text }}</a>
+      
+    {% endfor %}
 </div>
 </header>
 
 <section>
   {{ content }}
 </section>
-<script src="{{ page.relative }}scripts/jquery-1.6.5.js?v={{ site.time | date_to_xmlschema }}"></script>
-<script type="text/javascript" src="{{ page.relative }}scripts/site.js"></script>
-<script type="text/javascript">loadExample();</script>
+
+<script src="{{ page.relative }}scripts/jquery-1.6.5.js"></script>
+<script type="text/javascript" src="{{ page.relative }}scripts/site.js?v={{ site.time | date_to_xmlschema }}"></script>
 
 <script type="text/javascript">
   var _gaq = _gaq || [];

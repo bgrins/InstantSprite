@@ -1,6 +1,16 @@
 markdown: rdiscount
 permalink: /articles/:title
-base-url: /localhost/~brian/InstantSprite/site/_site/
+safe: true
 exclude:
 - README.md
 - Rakefile
+navigation:
+- text: Articles
+  class: page_white_stack
+  url: articles/
+- text: FAQ
+  class: help
+  url: faq/
+- text: Feedback
+  class: comments
+  url: feedback/

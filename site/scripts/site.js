@@ -22,3 +22,5 @@ function loadExample() {
 	});
 
 }
+
+$(loadExample);
