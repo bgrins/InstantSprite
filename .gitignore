@@ -1,7 +1,5 @@
 
-web-build/*
-util/makelive.sh
-util/sync.sh
+sync.sh
 
 # OS generated files #
 ######################
