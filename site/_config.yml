@@ -1,0 +1,7 @@
+markdown: rdiscount
+permalink: /articles/:title
+base-url: /localhost/~brian/InstantSprite/site/_site/
+auto: true
+exclude:
+- README.md
+- Rakefile
