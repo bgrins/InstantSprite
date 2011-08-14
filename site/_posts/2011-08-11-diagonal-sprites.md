@@ -22,7 +22,6 @@ extradescription: See <a href="http://www.aaronbarker.net/2010/07/diagonal-sprit
 .spritediagonal.application_edit { background-position: 0 -182px;  }
 </style>
 
-
 <em>This is an experimental example.  It uses diagonal sprites.  Credit for the idea goes to <a href='http://www.aaronbarker.net/2010/07/diagonal-sprites/'>Aaron Barker</a></em>
 
 <p class="spritediagonal add">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
@@ -31,4 +30,4 @@ extradescription: See <a href="http://www.aaronbarker.net/2010/07/diagonal-sprit
 
 <p class="spritediagonal anchor">Lorem Ipsum...</p>
 
-<>
+</div>
