@@ -101,13 +101,14 @@ form { margin: 0; padding: 0; }
 #fileInput.offscreen {position:absolute;top:-400px;left: -400px;}
 
 /* Sprites */
-.icon { background: url('icon.png') no-repeat top left; padding-left:20px; } 
-.icon.computer_add { background-position: 0px 0px;  } 
-.icon.comments { background-position: 0px -26px;  } 
+.icon { background: url('icon.png?v=1') no-repeat top left; padding-left:20px; } 
+.icon.page_white_stack { background-position: 0px 0px;  } 
+.icon.help { background-position: 0px -26px;  } 
 .icon.delete { background-position: 0px -52px;  } 
-.icon.help { background-position: 0px -78px;  } 
-.icon.page_white_stack { background-position: 0px -104px;  } 
-.icon.group { background-position: 0px -130px;  } 
+.icon.github { background-position: 0px -78px;  } 
+.icon.group { background-position: 0px -104px;  } 
+.icon.computer_add { background-position: 0px -130px;  } 
+.icon.comments { background-position: 0px -156px;  } 
 
 /* Feedback page */
 #feedback { margin:25px 0 0 20px; }
