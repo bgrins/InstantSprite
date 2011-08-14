@@ -1,7 +1,4 @@
 
-
-
-
 (function(window, undefined) {
 
 var sprite = window.sprite = { };
@@ -63,6 +60,7 @@ var settings = sprite.settings = {
 		{ src: 'styles/icons/group.png', extra: { nameNoExtension: 'group', prettySize: '753.00 bytes' }, name: 'group.png', type: 'image/png' },
 		{ src: 'styles/icons/help.png', extra: { nameNoExtension: 'help', prettySize: '786.00 bytes' }, name: 'help.png', type: 'image/png' },
 		{ src: 'styles/icons/delete.png', extra: { nameNoExtension: 'delete', prettySize: '715.00 bytes' }, name: 'delete.png', type: 'image/png' },
+		{ src: 'styles/icons/github.png', extra: { nameNoExtension: 'github', prettySize: '389.00 bytes' }, name: 'github.png', type: 'image/png' },
 		{ src: 'styles/icons/computer_add.png', extra: { nameNoExtension: 'computer_add', prettySize: '781.00 bytes' }, name: 'help.png', type: 'image/png' }
 	]
 };
