@@ -5,6 +5,7 @@ SCRIPTS = /<script class='dev' src='(.*)'><\/script>/
 SCRIPTS2 = /(<script class='dev'.*><\/script>\s)/
 REPLACE_LIVE = /<!--livescript-->/
 APP_PATH = "site-build/index.html"
+DEV_APP_PATH = "site-build/dev.html"
 FRAMEWORK_PATH = "site-build/scripts/"
 OUTPUT_PATH = FRAMEWORK_PATH + 'instantsprite-min.js'
 FRAMEWORK_OUTPUT = "instantsprite.min.js"
@@ -20,6 +21,7 @@ task :build do
   
   system("jekyll")
   system("cp site/.htaccess site-build/")
+  system("cp " + APP_PATH + " " + DEV_APP_PATH);
   
   app = File.read APP_PATH
   FRAMEWORK_FILES = app.scan(SCRIPTS).collect { |x| x[0].split('/').last }
