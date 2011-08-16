@@ -101,7 +101,7 @@ form { margin: 0; padding: 0; }
 #fileInput.offscreen {position:absolute;top:-400px;left: -400px;}
 
 /* Sprites */
-.icon { background: url('icon.png?v=1') no-repeat top left; padding-left:20px; } 
+.icon { background: url('icon.png?v=2') no-repeat top left; padding-left:20px; } 
 .icon.page_white_stack { background-position: 0px 0px;  } 
 .icon.help { background-position: 0px -26px;  } 
 .icon.delete { background-position: 0px -52px;  } 
