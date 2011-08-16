@@ -1,4 +1,3 @@
-
 (function(window, undefined) {
 
 var sprite = window.sprite = { };
@@ -260,7 +259,7 @@ sprite.setrules = function() {
 		
 	// Each canvas needs its own rule
 	sprite.eachcanvas(function(canvas) {
-		var matchedArr = filenameMatchReg(canvas.fileName),
+		var matchedArr = filenameMatchReg.exec(canvas.fileName),
 			matchedFilename = matchedArr ? matchedArr[matchedArr.length-1] : canvas.fileName,
 			canvasClassName = $.trim(classprefix + matchedFilename + classsuffix),
 			canvasSelector = $.trim(mainSelector + '.' + canvasClassName);
