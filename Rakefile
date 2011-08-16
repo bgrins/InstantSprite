@@ -19,6 +19,7 @@ task :build do
     exit
   end
   
+  system("rm -R site-build")
   system("jekyll")
   system("cp site/.htaccess site-build/")
   system("cp " + APP_PATH + " " + DEV_APP_PATH);
