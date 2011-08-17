@@ -1,3 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Instant Sprite Test Suite</title>
+	<link rel="stylesheet" href="qunit.css" type="text/css" media="screen">
+	<script type="text/javascript" src="../site/scripts/jquery-1.6.2.js"></script>
+	<script type="text/javascript" src="qunit.js"></script>
+	<script type="text/javascript" src="test.js"></script>
+<script type='text/javascript' src='../site/scripts/rectangle-packer.js'></script>
+</head>
+<body>
+
+
 <p>
     Speed:
     <a href=# onclick="g_delay = 0; return false;">fastest</a>
@@ -24,8 +37,6 @@
 <br>
 <canvas id=bin></canvas>
 
-<script type='text/javascript' src='../site/scripts/bin-pack.js'></script>
-<script type='text/javascript' src='../site/scripts/rectangle-packer.js'></script>
 <script>
 	rectpack([
 		{ width: 10, height: 100 },
@@ -35,3 +46,6 @@
 		{ width: 10, height: 100 }
 	]);
 </script>
+
+</body>
+</html>
