@@ -15,6 +15,7 @@ var elements = sprite.elements = {
 	exportCss: '#exportCss',
 	exportHtml: '#exportHtml',
 	exportImageNewWindow: '#openInNewWindow',
+	crushImage: '#crushImage',
 	preview: '#preview',
 	result: '#result',
 	cssTemplateInputs: '#css-template input',
@@ -384,6 +385,7 @@ sprite.mergefiles = function() {
 		resultBase64 = resultCanvas.toDataURL("image/" + opts.exportAs);
 		elements.result.html("<img src='"+resultBase64+"'>");
 		elements.exportImageNewWindow.removeClass('disabled');
+		elements.crushImage.attr("href", "png.php?img=" + resultBase64);
 	}
 	else {
 		elements.result.html("");
