@@ -15,6 +15,8 @@ var elements = sprite.elements = {
 	exportCss: '#exportCss',
 	exportHtml: '#exportHtml',
 	exportImageNewWindow: '#openInNewWindow',
+	exportBase64: '#base64Image',
+	base64Box: '#textarea-base64',
 	crushImage: '#crushImage',
 	preview: '#preview',
 	result: '#result',
@@ -385,7 +387,10 @@ sprite.mergefiles = function() {
 		resultBase64 = resultCanvas.toDataURL("image/" + opts.exportAs);
 		elements.result.html("<img src='"+resultBase64+"'>");
 		elements.exportImageNewWindow.removeClass('disabled');
+		elements.exportBase64.removeClass('disabled');
+		elements.base64Box.val(resultBase64);
 		elements.crushImage.attr("href", "png.php?img=" + resultBase64);
+
 	}
 	else {
 		elements.result.html("");
@@ -438,6 +443,15 @@ sprite.init = function() {
 		}
 		return false;
 	});
+
+	elements.exportBase64.click(function() {
+		if (!$(this).hasClass("disabled")) {
+			elements.base64Box.toggle().focus().select();
+		}
+
+		return false;
+	});
+
 	elements.fileSamples.click(function() {
 		for (var i = 0; i < settings.sampleImages.length; i++) {
 			sprite.loadimage(settings.sampleImages[i].src, settings.sampleImages[i]);
