@@ -17,7 +17,9 @@
 <body>
 
 <header>
-<h1><a href='http://instantsprite.com'>Instant Sprite</a></h1>
+<h1><a href='http://instantsprite.com'>Instant Sprite</a>
+    <span class="desc">CSS Sprite Generator</span>
+</h1>
 <div class='links'>
 <a href='http://twitter.com/bgrins'>@bgrins</a>
 <a class='icon github' target='_blank' href='http://github.com/bgrins/InstantSprite/' title='Follow the project to be notified of changes, and discuss possible features and issues.'>Follow!</a>
@@ -29,7 +31,7 @@
 
 <div id='app'>
 <div id='intro' class='info'>
-<em>Welcome to Instant Sprite, the fastest way for you to make CSS sprites.</em><br />All the work will be done in your browser, so don't worry about sending your images over the Internet. <br />If you feel lost or want more information about CSS sprites, see <a href='articles/what-are-css-sprites/' target='_blank'>what are CSS sprites</a>. Once you are ready, follow the instructions below to get started. 
+<em>Welcome to Instant Sprite, the fastest way for to generate CSS sprites.</em><br />All the work will be done in your browser, so don't worry about sending your images over the Internet. <br />If you feel lost or want more information about generating CSS sprites, see <a href='articles/what-are-css-sprites/' target='_blank'>what are CSS sprites</a>. Once you are ready, follow the instructions below to get started. 
 </div>
 <section id='source' class='full clearfix'>
 	<div id='initialload'>Loading, please wait...<span></span></div>
@@ -73,9 +75,12 @@
 </section>
 <section>
     <header>Sprite</header>
-    <div class='help'>Right click the image to save it to your computer.  <a href='#' id='openInNewWindow' class='disabled'>Open image in a new window</a> 
-    <a href='#' id='crushImage' class='disabled'>Get Optimized Image</a>
-    .</div>
+    <div class='help'>Right click the image to save it to your computer.
+        <a href='#' id='openInNewWindow' class='disabled'>Open image in a new window</a> 
+        <a href='#' id='crushImage' class='disabled'>Get Optimized Image</a>
+        <a href='#' id='base64Image' class='disabled'>As Base64</a>
+        <textarea id='textarea-base64' style='display: none;'></textarea>
+    </div>
     <div class='content' id='result'>
     </div>
 </section>
