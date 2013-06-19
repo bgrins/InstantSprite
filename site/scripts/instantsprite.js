@@ -16,7 +16,6 @@ var elements = sprite.elements = {
 	exportHtml: '#exportHtml',
 	exportImageNewWindow: '#openInNewWindow',
 	exportBase64: '#base64Image',
-	base64Box: '#textarea-base64',
 	crushImage: '#crushImage',
 	preview: '#preview',
 	result: '#result',
@@ -388,9 +387,8 @@ sprite.mergefiles = function() {
 		elements.result.html("<img src='"+resultBase64+"'>");
 		elements.exportImageNewWindow.removeClass('disabled');
 		elements.exportBase64.removeClass('disabled');
-		elements.base64Box.val(resultBase64);
+		elements.exportBase64.attr("data-clipboard-text", resultBase64);
 		elements.crushImage.attr("href", "png.php?img=" + resultBase64);
-
 	}
 	else {
 		elements.result.html("");
@@ -437,18 +435,35 @@ sprite.init = function() {
 			sprite.mergefiles();
 		}
 	});
+
+	var clip = new ZeroClipboard(elements.exportBase64[0]);
+
+	clip.on('mouseover', function(c) {
+		elements.exportBase64.tinytooltip({ 
+			message: 'Copy image as base64',
+			hover: false 
+		});
+
+		elements.exportBase64.trigger('showtooltip');
+	});
+
+	clip.on('complete', function(c) {
+		elements.exportBase64.trigger('destroy');
+		elements.exportBase64.tinytooltip({ 
+			message: 'Copied',
+			hover: false 
+		});
+		elements.exportBase64.trigger('showtooltip');
+	});
+
+	clip.on('mouseout', function(c) {
+		elements.exportBase64.trigger('destroy');
+	});
+
 	elements.exportImageNewWindow.click(function() {
 		if (!$(this).hasClass("disabled")) {
 			window.open(resultBase64);
 		}
-		return false;
-	});
-
-	elements.exportBase64.click(function() {
-		if (!$(this).hasClass("disabled")) {
-			elements.base64Box.toggle().focus().select();
-		}
-
 		return false;
 	});
 
