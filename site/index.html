@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Instant Sprite - Generate CSS Sprites Instantly</title>
-	<meta name="description" content="Instant Sprite - CSS Sprite Generator.  Browser based, fast CSS Sprite, HTML, and CSS generation.">
+	<meta name="description" content="Instant Sprite - The fastest CSS Sprite Generator.  It is entirely browser based - drag and drop images onto the page,  rearrange them, change CSS classes, and output the image in multiple formats.">
 	<link type="text/css" media="screen" rel="stylesheet" href="styles/instantsprite.css">
 	<script class='dev' src='scripts/jquery-1.6.2.js'></script>
 	<script class='dev' src='scripts/common.js'></script>
@@ -24,14 +24,14 @@
 <a href='http://twitter.com/bgrins'>@bgrins</a>
 <a class='icon github' target='_blank' href='http://github.com/bgrins/InstantSprite/' title='Follow the project to be notified of changes, and discuss possible features and issues.'>Follow!</a>
 <a class='icon page_white_stack' href='articles/'>Articles</a>
-<a class='icon help' href='faq/'>FAQ</a> 
-<a class='icon comments' href='feedback/'>Feedback</a> 
+<a class='icon help' href='faq/'>FAQ</a>
+<a class='icon comments' href='feedback/'>Feedback</a>
 </div>
 </header>
 
 <div id='app'>
 <div id='intro' class='info'>
-<em>Welcome to Instant Sprite, the fastest way for to generate CSS sprites.</em><br />All the work will be done in your browser, so don't worry about sending your images over the Internet. <br />If you feel lost or want more information about generating CSS sprites, see <a href='articles/what-are-css-sprites/' target='_blank'>what are CSS sprites</a>. Once you are ready, follow the instructions below to get started. 
+<em>Welcome to Instant Sprite, the fastest way for to generate CSS sprites.</em><br />All the work will be done in your browser, so don't worry about sending your images over the Internet. <br />If you feel lost or want more information about generating CSS sprites, see <a href='articles/what-are-css-sprites/' target='_blank'>what are CSS sprites</a>. Once you are ready, follow the instructions below to get started.
 </div>
 <section id='source' class='full clearfix'>
 	<div id='initialload'>Loading, please wait...<span></span></div>
@@ -62,12 +62,12 @@
     	<div class='radio field'>
     	<span>Direction:</span>
     	<label><input type="radio" name="direction" value="vertical" checked="checked" /><span>vertical</span></label>
-    	<label><input type="radio" name="direction" value="horizontal" /><span>horizonal</span></label> 
+    	<label><input type="radio" name="direction" value="horizontal" /><span>horizonal</span></label>
     	<label><input type="radio" name="direction" value="diagonal" /><span>diagonal</span></label>
     	</div>
     	<div class='radio field'>
     	<span>File Type:</span>
-    	<label><input type="radio" name="export" value="png" checked="checked" /><span>png</span></label> 
+    	<label><input type="radio" name="export" value="png" checked="checked" /><span>png</span></label>
     	<label><input type="radio" name="export" value="gif" /><span>gif</span></label>
     	</div>
     	</form>
@@ -76,8 +76,8 @@
 <section>
     <header>Sprite</header>
     <div class='help'>Right click the image to save it to your computer.
-        <a href='#' id='openInNewWindow' class='disabled'>Open image in a new window</a> 
-        <a href='#' id='crushImage' class='disabled'>Get Optimized Image</a>
+        <a href='#' id='openInNewWindow' class='disabled'>Open image in a new window</a> &nbsp;
+        <a href='#' id='crushImage' class='disabled'>Get Optimized Image</a> &nbsp;
         <a href='#' id='base64Image' class='disabled'>As Base64</a>
         <textarea id='textarea-base64' style='display: none;'></textarea>
     </div>
@@ -91,12 +91,12 @@
     	<div id='exportCssContainer'>
     		<div id='css-template'>
     				<input name="css-prefix" id="css-prefix" placeholder="CSS prefix" />
-    				<input name="sprite-classname" id="sprite-classname" placeholder="sprite class name" value="sprite" />.<input name="class-prefix" id="class-prefix" placeholder="class prefix" /><input name="filename-match" id="filename-match" placeholder="filename match" value='(.*)' /><input name="class-suffix" id="class-suffix" placeholder="class suffix" /> 
+    				<input name="sprite-classname" id="sprite-classname" placeholder="sprite class name" value="sprite" />.<input name="class-prefix" id="class-prefix" placeholder="class prefix" /><input name="filename-match" id="filename-match" placeholder="filename match" value='(.*)' /><input name="class-suffix" id="class-suffix" placeholder="class suffix" />
     				{ ... }
     		</div>
     		<textarea id='exportCss' rows='15'></textarea>
     	</div>
-    	
+
     	<textarea id='exportHtml' rows='15'></textarea>
     </div>
 </section>
