@@ -16,7 +16,6 @@ var elements = sprite.elements = {
 	exportHtml: '#exportHtml',
 	exportImageNewWindow: '#openInNewWindow',
 	exportBase64: '#base64Image',
-	crushImage: '#crushImage',
 	preview: '#preview',
 	result: '#result',
 	cssTemplateInputs: '#css-template input',
@@ -81,10 +80,10 @@ var templates = {
 var templateHelpers = {
 	loadedImage: function(canvas, file) {
 		var tmpl = $.tmpl( "loadedImage", file );
-		
+
 		// generate thumbnail, show in list
-        var ratio = 1, 
-        	maxWidth = settings.thumbnailWidth, 
+        var ratio = 1,
+        	maxWidth = settings.thumbnailWidth,
         	maxHeight = settings.thumbnailHeight;
         	thumbnailCanvas = tmpl.find("canvas")[0],
         	thumbnailContext = thumbnailCanvas.getContext("2d");
@@ -95,16 +94,16 @@ var templateHelpers = {
         else if(canvas.height > maxHeight) {
             ratio = maxHeight / canvas.height;
 		}
-		
+
 		// only allow letters, numbers, dashes, and underscores in the selector
 		// should this come through in the FileReaderJS extra prop?
 		canvas.fileName = file.extra.nameNoExtension.replace(/[^_a-zA-Z0-9-]/g, '');
 		thumbnailCanvas.originalCanvas = canvas;
         thumbnailCanvas.width = canvas.width * ratio;
         thumbnailCanvas.height = canvas.height * ratio;
-        
+
         thumbnailContext.drawImage(canvas, 0, 0, canvas.width, canvas.height, 0, 0, thumbnailCanvas.width, thumbnailCanvas.height);
-        
+
         return tmpl;
 	}
 };
@@ -117,23 +116,23 @@ sprite.shrinkdropbox = function() {
 
 sprite.loadimage = function(src, file) {
 	var img = document.createElement("img");
-	
+
 	img.onload = function() {
 		var canvas = document.createElement("canvas"),
 	    	ctx = canvas.getContext('2d');
-	    
+
 	    canvas.width = img.width;
 	    canvas.height = img.height;
 	    ctx.drawImage(img, 0, 0);
-	    
+
 	    elements.addedFiles.append(templateHelpers.loadedImage(canvas, file));
-	    
+
 	    $(img).remove();
-	    
+
 	    delay(sprite.sortthumbnails, 100);
 	    delay(sprite.mergefiles, 100);
 	};
-	
+
 	sprite.shrinkdropbox();
 	img.src = src;
 	elements.imageload.append(img);
@@ -152,12 +151,12 @@ sprite.fileReaderOpts = {
 			loadingfiles--;
 		},
 		beforestart: function(file) {
-		
+
 			var cantLoad = !settings.canImportTiff && file.type == 'image/tiff';
 			if (cantLoad) {
 				alert("Your browser does not support loading files of type: " + file.type);
 			}
-			
+
 			if (!file.type.match(new RegExp("image/*")) || cantLoad) {
 				elements.fileWarnings.append($.tmpl( "fileNotImage", file ));
 				return false;
@@ -174,7 +173,7 @@ sprite.fileReaderOpts = {
 			elements.fileWarnings.append($.tmpl( "fileLoadError", e ));
 		},
 		skip: function(file) {
-		
+
 		},
 		groupstart: function(files, groupID) {
 			sprite.shrinkdropbox();
@@ -184,10 +183,10 @@ sprite.fileReaderOpts = {
 			elements.progress.hide();
 		}
 	}
-	
+
 };
 
-sprite.gen = { 
+sprite.gen = {
 	rulebackground: function(url, width, height) {
 		var backgroundAttr = "background: url('"+url+"') no-repeat top left; ",
 			widthAttr = (width) ? 'width: ' + width + 'px; ' : '',
@@ -206,13 +205,13 @@ sprite.gen = {
 };
 
 sprite.dimensionfrequency = function() {
-	
+
 	var heights = { }, widths = { };
 	sprite.eachcanvas(function(canvas) {
 		heights[canvas.height] = !heights[canvas.height] ? 1 : heights[canvas.height] + 1;
 		widths[canvas.width] = !widths[canvas.width] ? 1 : widths[canvas.width] + 1;
 	});
-	
+
 	var numberOfHeights = mostFrequentHeight = heightCount = 0;
 	for (var h in heights) {
 		numberOfHeights++;
@@ -221,7 +220,7 @@ sprite.dimensionfrequency = function() {
 			mostFrequentHeight = parseInt(h, 10);
 		}
 	}
-	
+
 	var numberOfWidths = mostFrequentWidth = widthCount = 0;
 	for (var w in widths) {
 		numberOfWidths++;
@@ -230,9 +229,9 @@ sprite.dimensionfrequency = function() {
 			mostFrequentWidth = parseInt(w, 10);
 		}
 	}
-	
-	return { 
-		mostFrequentWidth: mostFrequentWidth, 
+
+	return {
+		mostFrequentWidth: mostFrequentWidth,
 		mostFrequentHeight: mostFrequentHeight,
 		numberOfWidths: numberOfWidths,
 		numberOfHeights: numberOfHeights
@@ -252,13 +251,13 @@ sprite.setrules = function() {
 		filename = spriteClassName + '.' + sprite.getopts().exportAs,
 		dimensionFrequency = sprite.dimensionfrequency(),
 		defineDimensionsGlobally = (
-			dimensionFrequency.numberOfWidths == 1 && 
+			dimensionFrequency.numberOfWidths == 1 &&
 			dimensionFrequency.numberOfHeights == 1
 		);
-		
+
 	try { elements.filenameMatch.removeClass("error"); filenameMatchReg = new RegExp(filenameMatch) }
 	catch (e) { elements.filenameMatch.addClass("error"); filenameMatchReg = new RegExp('.*'); }
-		
+
 	// Each canvas needs its own rule
 	sprite.eachcanvas(function(canvas) {
 		var matchedArr = filenameMatchReg.exec(canvas.fileName),
@@ -267,12 +266,12 @@ sprite.setrules = function() {
 			canvasSelector = $.trim(mainSelector + '.' + canvasClassName);
 			width = defineDimensionsGlobally ? false : canvas.width,
 			height = defineDimensionsGlobally ? false : canvas.height;
-			
+
 		cssRules.push(sprite.gen.ruleindividual(canvasSelector, canvas.storeX, canvas.storeY, width, height));
 		htmlRules.push(sprite.gen.demoelement(spriteClassName + ' ' + canvasClassName));
 	});
-	
-	
+
+
 	var outputWidth = defineDimensionsGlobally ? dimensionFrequency.mostFrequentWidth : false,
 		outputHeight = defineDimensionsGlobally ? dimensionFrequency.mostFrequentHeight : false,
 		outputRule = mainSelector + sprite.gen.rulebackground(filename, outputWidth, outputHeight) + "\n",
@@ -281,7 +280,7 @@ sprite.setrules = function() {
 		demoRule = mainSelector + sprite.gen.rulebackground(resultBase64, outputWidth, outputHeight) + "\n",
 		demoCss = demoRule + cssRules.join('\n'),
 		demoStyleTag = "<style type='text/css'>" + demoCss + "</style>";
-		
+
 	elements.exportHtml.val(outputHtml).attr('rows', htmlRules.length);
 	elements.exportCss.val(outputCss).attr('rows', cssRules.length + 1);
 	elements.preview.contents().find("body").html(demoStyleTag + outputHtml);
@@ -310,7 +309,7 @@ sprite.getopts = function() {
 sprite.getcanvases = function() {
 	return elements.addedFiles.children().map(function(i, el) {
 		return $(this).find("canvas")[0];
-	});	
+	});
 };
 
 sprite.eachcanvas = function(cb) {
@@ -321,7 +320,7 @@ sprite.eachcanvas = function(cb) {
 };
 
 sprite.mergefiles = function() {
-	
+
 	var opts = sprite.getopts(),
 		len = sprite.getcanvases().length,
 		totalSpacing = len * opts.offset,
@@ -331,64 +330,63 @@ sprite.mergefiles = function() {
 		totalWidth = 0,
 		totalHeight = 0,
 		resultContext = resultCanvas.getContext("2d");
-	
+
 	// Generate final canvas size and locations
 	sprite.eachcanvas(function(canvas, i, islast) {
-	
+
 		var spacing = islast ? 0 : opts.spacing;
 		canvas.storeX = canvas.storeY = 0;
-		
+
 		if (isDiagonal) {
-			
+
 			canvas.storeX = totalWidth;
 			canvas.storeY = totalHeight;
-			
+
 			totalWidth += canvas.width + spacing;
 			totalHeight += canvas.height + spacing;
-		
+
 		}
 		else if (isVertical) {
-			
+
 			canvas.storeY = totalHeight;
-			
+
 			totalWidth = Math.max(canvas.width, totalWidth);
 			totalHeight += canvas.height + spacing;
-		
+
 		}
 		else if (isHorizontal) {
-			
+
 			canvas.storeX = totalWidth;
-			
-			totalHeight = Math.max(canvas.height, totalHeight);		
+
+			totalHeight = Math.max(canvas.height, totalHeight);
 			totalWidth += canvas.width + spacing;
-		
+
 		}
 	});
-	
+
 	resultCanvas.width = totalWidth
 	resultCanvas.height = totalHeight;
-	
+
 	sprite.eachcanvas(function(canvas) {
 		if (isDiagonal) {
 			// need to set the reset the storeX now since we want it opposite
 			// (starting at top right instead of top left)
 			canvas.storeX = totalWidth - canvas.storeX - canvas.width;
 		}
-		
+
 		resultContext.drawImage(canvas, canvas.storeX, canvas.storeY);
-		
+
 		// Need to be inverted now for background-position
 		canvas.storeX = -canvas.storeX;
 		canvas.storeY = -canvas.storeY;
 	});
-	
+
 	if (totalWidth != 0) {
 		resultBase64 = resultCanvas.toDataURL("image/" + opts.exportAs);
 		elements.result.html("<img src='"+resultBase64+"'>");
 		elements.exportImageNewWindow.removeClass('disabled');
 		elements.exportBase64.removeClass('disabled');
 		elements.exportBase64.attr("data-clipboard-text", resultBase64);
-		elements.crushImage.attr("href", "png.php?img=" + resultBase64);
 	}
 	else {
 		elements.result.html("");
@@ -405,18 +403,18 @@ sprite.init = function() {
 	for (var i in templates) {
 		$.template(i, templates[i]);
 	}
-	
-	if (!settings.enabled) { 
+
+	if (!settings.enabled) {
 		// Show an error message, since the browser doesn't support necessary features
 		// Using short circuit return to cut back on indentation for rest of app
 		elements.app.hide();
 		elements.noapp.show();
 		return;
 	}
-	
+
 	elements.fileInput.fileReaderJS(sprite.fileReaderOpts);
 	$(document.body).fileReaderJS(sprite.fileReaderOpts);
-	
+
 	elements.exportCss.val("");
 	elements.fileInputShortcut.click(function() { elements.fileInput.click(); return false; });
 	elements.cssTemplateInputs.fitInputToWidth().keyup(sprite.setrules);
@@ -439,9 +437,9 @@ sprite.init = function() {
 	var clip = new ZeroClipboard(elements.exportBase64[0]);
 
 	clip.on('mouseover', function(c) {
-		elements.exportBase64.tinytooltip({ 
+		elements.exportBase64.tinytooltip({
 			message: 'Copy image as base64',
-			hover: false 
+			hover: false
 		});
 
 		elements.exportBase64.trigger('showtooltip');
@@ -449,9 +447,9 @@ sprite.init = function() {
 
 	clip.on('complete', function(c) {
 		elements.exportBase64.trigger('destroy');
-		elements.exportBase64.tinytooltip({ 
+		elements.exportBase64.tinytooltip({
 			message: 'Copied',
-			hover: false 
+			hover: false
 		});
 		elements.exportBase64.trigger('showtooltip');
 	});
@@ -473,29 +471,29 @@ sprite.init = function() {
 		}
 		return false;
 	});
-	
+
 	if (!settings.canExportGif) {
 		// Firefox doesn't allow exporting as gif yet.  Chrome's gif export is pretty bad
 		elements.optionExport.filter("[value=gif]").attr("disabled", "disabled").closest("label").attr("title", "Your browser does not support exporting to gif");
 	}
-	
+
 	if ($.browser.mozilla) {
 		// Firefox doesn't like clicking a link to file input, so just show the real thing
 		elements.fileInput.removeClass('offscreen').before(elements.fileInputShortcut.text() + ":&nbsp;");
 		elements.fileInputShortcut.hide();
 	}
-	
+
 	fitDropboxToScreen();
 	$(window).resize(fitDropboxToScreen);
 	$("#initialload").remove();
 	elements.dropbox.find("ul").removeClass("hide");
 };
-	
-	
+
+
 // ==============
 // Utilities
 // ==============
-	
+
 function fitDropboxToScreen() {
 	if (elements.dropbox.hasClass("full")) {
 		var height = Math.max(200, $(window).height() - elements.dropbox.offset().top - 60);
