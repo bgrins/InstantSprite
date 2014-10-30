@@ -236,6 +236,8 @@ sprite.dimensionfrequency = function() {
 	return {
 		mostFrequentWidth: mostFrequentWidth,
 		mostFrequentHeight: mostFrequentHeight,
+		mostFrequentWidthCount: widthCount,
+		mostFrequentHeightCount: heightCount,
 		numberOfWidths: numberOfWidths,
 		numberOfHeights: numberOfHeights
 	}
@@ -253,10 +255,8 @@ sprite.setrules = function() {
 		filenameMatchReg,
 		filename = spriteClassName + '.' + sprite.getopts().exportAs,
 		dimensionFrequency = sprite.dimensionfrequency(),
-		defineDimensionsGlobally = (
-			dimensionFrequency.numberOfWidths == 1 &&
-			dimensionFrequency.numberOfHeights == 1
-		);
+		defaultWidth = dimensionFrequency.mostFrequentWidthCount !== 1 ? dimensionFrequency.mostFrequentWidth : false,
+		defaultHeight = dimensionFrequency.mostFrequentHeightCount !== 1 ? dimensionFrequency.mostFrequentHeight : false;
 
 	try { elements.filenameMatch.removeClass("error"); filenameMatchReg = new RegExp(filenameMatch) }
 	catch (e) { elements.filenameMatch.addClass("error"); filenameMatchReg = new RegExp('.*'); }
@@ -267,20 +267,17 @@ sprite.setrules = function() {
 			matchedFilename = matchedArr ? matchedArr[matchedArr.length-1] : canvas.fileName,
 			canvasClassName = $.trim(classprefix + matchedFilename + classsuffix),
 			canvasSelector = $.trim(mainSelector + '.' + canvasClassName),
-			width = defineDimensionsGlobally ? false : canvas.width,
-			height = defineDimensionsGlobally ? false : canvas.height;
+			width = (canvas.width === defaultWidth) ? false : canvas.width,
+			height = (canvas.height === defaultHeight) ? false : canvas.height;
 
 		cssRules.push(sprite.gen.ruleindividual(canvasSelector, canvas.storeX, canvas.storeY, width, height));
 		htmlRules.push(sprite.gen.demoelement(spriteClassName + ' ' + canvasClassName));
 	});
 
-
-	var outputWidth = defineDimensionsGlobally ? dimensionFrequency.mostFrequentWidth : false,
-		outputHeight = defineDimensionsGlobally ? dimensionFrequency.mostFrequentHeight : false,
-		outputRule = mainSelector + sprite.gen.rulebackground(filename, outputWidth, outputHeight) + "\n",
+	var outputRule = mainSelector + sprite.gen.rulebackground(filename, defaultWidth, defaultHeight) + "\n",
 		outputCss = outputRule + cssRules.join('\n'),
 		outputHtml = htmlRules.join('\n'),
-		demoRule = mainSelector + sprite.gen.rulebackground(resultBase64, outputWidth, outputHeight) + "\n",
+		demoRule = mainSelector + sprite.gen.rulebackground(resultBase64, defaultWidth, defaultHeight) + "\n",
 		demoCss = demoRule + cssRules.join('\n'),
 		demoStyleTag = "<style type='text/css'>" + demoCss + "</style>";
 
