@@ -215,22 +215,18 @@ sprite.dimensionfrequency = function() {
 		widths[canvas.width] = !widths[canvas.width] ? 1 : widths[canvas.width] + 1;
 	});
 
-	var numberOfHeights = 0,
-		mostFrequentHeight = 0,
+	var mostFrequentHeight = 0,
 		heightCount = 0;
 	for (var h in heights) {
-		numberOfHeights++;
 		if (heightCount < heights[h]) {
 			heightCount = heights[h];
 			mostFrequentHeight = parseInt(h, 10);
 		}
 	}
 
-	var numberOfWidths = 0,
-		mostFrequentWidth = 0,
+	var mostFrequentWidth = 0,
 		widthCount = 0;
 	for (var w in widths) {
-		numberOfWidths++;
 		if (widthCount < widths[w]) {
 			widthCount = widths[w];
 			mostFrequentWidth = parseInt(w, 10);
@@ -241,9 +237,7 @@ sprite.dimensionfrequency = function() {
 		mostFrequentWidth: mostFrequentWidth,
 		mostFrequentHeight: mostFrequentHeight,
 		mostFrequentWidthCount: widthCount,
-		mostFrequentHeightCount: heightCount,
-		numberOfWidths: numberOfWidths,
-		numberOfHeights: numberOfHeights
+		mostFrequentHeightCount: heightCount
 	}
 };
 
@@ -326,8 +320,6 @@ sprite.eachcanvas = function(cb) {
 sprite.mergefiles = function() {
 
 	var opts = sprite.getopts(),
-		len = sprite.getcanvases().length,
-		totalSpacing = len * opts.offset,
 		isVertical = opts.vertical,
 		isHorizontal = opts.horizontal,
 		isDiagonal = opts.diagonal,
