@@ -84,7 +84,7 @@ var templateHelpers = {
 		// generate thumbnail, show in list
         var ratio = 1,
         	maxWidth = settings.thumbnailWidth,
-        	maxHeight = settings.thumbnailHeight;
+        	maxHeight = settings.thumbnailHeight,
         	thumbnailCanvas = tmpl.find("canvas")[0],
         	thumbnailContext = thumbnailCanvas.getContext("2d");
 
@@ -266,7 +266,7 @@ sprite.setrules = function() {
 		var matchedArr = filenameMatchReg.exec(canvas.fileName),
 			matchedFilename = matchedArr ? matchedArr[matchedArr.length-1] : canvas.fileName,
 			canvasClassName = $.trim(classprefix + matchedFilename + classsuffix),
-			canvasSelector = $.trim(mainSelector + '.' + canvasClassName);
+			canvasSelector = $.trim(mainSelector + '.' + canvasClassName),
 			width = defineDimensionsGlobally ? false : canvas.width,
 			height = defineDimensionsGlobally ? false : canvas.height;
 
@@ -367,7 +367,7 @@ sprite.mergefiles = function() {
 		}
 	});
 
-	resultCanvas.width = totalWidth
+	resultCanvas.width = totalWidth;
 	resultCanvas.height = totalHeight;
 
 	sprite.eachcanvas(function(canvas) {
