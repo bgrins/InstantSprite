@@ -183,23 +183,26 @@ sprite.fileReaderOpts = {
 			elements.progress.hide();
 		}
 	}
+};
 
+sprite.px = function(val) {
+	return val + (val == 0 ? '' : 'px');
 };
 
 sprite.gen = {
 	rulebackground: function(url, width, height) {
 		var backgroundAttr = "background: url('"+url+"') no-repeat top left; ",
-			widthAttr = (width) ? 'width: ' + width + 'px; ' : '',
-			heightAttr = (height) ? 'height: ' + height + 'px; ' : '';
+			widthAttr = (width) ? 'width: ' + sprite.px(width) + '; ' : '',
+			heightAttr = (height) ? 'height: ' + sprite.px(height) + '; ' : '';
 		return ' { ' + backgroundAttr + widthAttr + heightAttr + ' } ';
 	},
 	demoelement: function(classname) {
 		return "<div class='" + classname + "'></div>";
 	},
 	ruleindividual: function(selector, posX, posY, width, height) {
-		var posAttr = 'background-position: ' + posX + 'px ' + posY + 'px; ',
-			widthAttr = (width) ? 'width: ' + width + 'px; ' : '',
-			heightAttr = (height) ? 'height: ' + height + 'px; ' : '';
+		var posAttr = 'background-position: ' + sprite.px(posX) + ' ' + sprite.px(posY) + '; ',
+			widthAttr = (width) ? 'width: ' + sprite.px(width) + '; ' : '',
+			heightAttr = (height) ? 'height: ' + sprite.px(height) + '; ' : '';
 		return selector + ' { ' + posAttr + widthAttr + heightAttr + ' } ';
 	}
 };
