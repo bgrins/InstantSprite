@@ -215,7 +215,9 @@ sprite.dimensionfrequency = function() {
 		widths[canvas.width] = !widths[canvas.width] ? 1 : widths[canvas.width] + 1;
 	});
 
-	var numberOfHeights = mostFrequentHeight = heightCount = 0;
+	var numberOfHeights = 0,
+		mostFrequentHeight = 0,
+		heightCount = 0;
 	for (var h in heights) {
 		numberOfHeights++;
 		if (heightCount < heights[h]) {
@@ -224,7 +226,9 @@ sprite.dimensionfrequency = function() {
 		}
 	}
 
-	var numberOfWidths = mostFrequentWidth = widthCount = 0;
+	var numberOfWidths = 0,
+		mostFrequentWidth = 0,
+		widthCount = 0;
 	for (var w in widths) {
 		numberOfWidths++;
 		if (widthCount < widths[w]) {
