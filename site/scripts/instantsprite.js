@@ -203,7 +203,7 @@ sprite.gen = {
 		var posAttr = 'background-position: ' + sprite.px(posX) + ' ' + sprite.px(posY) + '; ',
 			widthAttr = (width) ? 'width: ' + sprite.px(width) + '; ' : '',
 			heightAttr = (height) ? 'height: ' + sprite.px(height) + '; ' : '';
-		return selector + ' { ' + posAttr + widthAttr + heightAttr + ' } ';
+		return selector + ' { ' + posAttr + widthAttr + heightAttr + '} ';
 	}
 };
 
