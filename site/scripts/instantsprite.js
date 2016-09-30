@@ -300,7 +300,8 @@ sprite.getopts = function() {
 		exportAs: elements.optionExport.filter(":checked").val(),
 		vertical: (direction == "vertical"),
 		horizontal: (direction == "horizontal"),
-		diagonal: (direction == "diagonal")
+		diagonal: (direction == "diagonal"),
+		grid: (direction == "grid")
 	}
 };
 
@@ -323,8 +324,13 @@ sprite.mergefiles = function() {
 		isVertical = opts.vertical,
 		isHorizontal = opts.horizontal,
 		isDiagonal = opts.diagonal,
+		isGrid = opts.grid,
 		totalWidth = 0,
 		totalHeight = 0,
+		cols = Math.ceil(Math.sqrt(sprite.getcanvases().length)),
+		colCount = 0,
+		rowWidth = 0,
+		rowHeight = 0,
 		resultContext = resultCanvas.getContext("2d");
 
 	// Generate final canvas size and locations
@@ -356,6 +362,33 @@ sprite.mergefiles = function() {
 
 			totalHeight = Math.max(canvas.height, totalHeight);
 			totalWidth += canvas.width + spacing;
+
+		}
+		else if (isGrid) {
+
+			canvas.storeX = rowWidth;
+			canvas.storeY = totalHeight;
+
+			rowWidth += canvas.width + spacing;
+
+			if (canvas.height > rowHeight) {
+				rowHeight = canvas.height;
+			}
+
+			colCount++;
+
+			if (colCount == cols || islast) {
+				rowWidth -= spacing;
+
+				if (rowWidth > totalWidth) {
+					totalWidth = rowWidth;
+				}
+
+				totalHeight += rowHeight + spacing;
+				rowWidth = 0;
+				rowHeight = 0;
+				colCount = 0;
+			}
 
 		}
 	});
