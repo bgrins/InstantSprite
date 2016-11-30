@@ -46,3 +46,7 @@ task :build do
   File.open(APP_PATH, 'w+') {|f| f.write(newscript) }
   
 end
+
+task :deploy do
+system("git subtree push --prefix site-build origin gh-pages")
+end
