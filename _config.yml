@@ -1,4 +1,4 @@
-markdown: rdiscount
+markdown: kramdown
 permalink: /articles/:title
 source: site
 destination: site-build
