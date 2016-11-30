@@ -5,7 +5,7 @@
    <title>What are CSS Sprites? - Instant Sprite</title>
    <meta name="description" content="A CSS sprite is a combination of multiple images, separated with CSS.  CSS Sprites make your page more efficient by limiting the number of HTTP requests for images.">
 
-   <!-- 2016-11-30T13:26:53-08:00 -->
+   <!-- 2016-11-30T14:07:20-08:00 -->
    <link rel="stylesheet" href="styles/site.css" type="text/css" media="screen, projection" />
    <link rel="stylesheet" href="styles/instantsprite.css" type="text/css" media="screen, projection" />
 </head>
@@ -37,11 +37,11 @@
 
 <section>
   <section id="example">
-<h1>What are CSS Sprites?</h1>
+<h1 id="what-are-css-sprites">What are CSS Sprites?</h1>
 
 <div>
 
-<style type='text/css' data-linked='sprite-demo'>
+<style type="text/css" data-linked="sprite-demo">
 
 .sprite { background: url('../../styles/articles/icon.png') no-repeat top left; padding-left: 20px; line-height: 16px;  } 
 .sprite.delete { background-position: 0px 0px;  } 
@@ -50,7 +50,7 @@
 
 </style>
 
-<style type='text/css' data-linked='nosprite-demo'>
+<style type="text/css" data-linked="nosprite-demo">
 
 .nosprite { padding-left: 20px; line-height:16px; background-repeat: no-repeat; }
 .nosprite.help { background-image: url('../../styles/articles/help.png'); }
@@ -69,10 +69,10 @@ CSS Spriting is a technique used to limit the number of HTTP requests generated 
 Let's imagine that you have some links on your page:
 </p>
 
-<section class='demo viewsource'>
-<a href='#'>Delete an item</a> |
-<a href='#'>Contact us</a> |
-<a href='#'>Need help?</a>
+<section class="demo viewsource">
+<a href="#">Delete an item</a> |
+<a href="#">Contact us</a> |
+<a href="#">Need help?</a>
 </section>
 
 <h3>Three Links, With Style</h3>
@@ -81,18 +81,18 @@ Let's imagine that you have some links on your page:
 Your links look great, but you decide spice it up a little bit with some images.  You find three icons.  Here they are:
 </p>
 
-<section class='demo images viewsource'>
-<img src='../../delete.png' /> <img src='../../group.png' /> <img src='../../help.png' />
+<section class="demo images viewsource">
+<img src="../../delete.png" /> <img src="../../group.png" /> <img src="../../help.png" />
 </section>
 
 <p>
 Using CSS and the images, you set the background and put a little bit of padding on the left to add some space before the text starts.  Your links now look like this:
 </p>
 
-<section id='nosprite-demo' class='demo viewsource'>
-<a href='#' class='nosprite delete'>Delete an item</a> |
-<a href='#' class='nosprite group'>Contact us</a> |
-<a href='#' class='nosprite help'>Need help?</a>
+<section id="nosprite-demo" class="demo viewsource">
+<a href="#" class="nosprite delete">Delete an item</a> |
+<a href="#" class="nosprite group">Contact us</a> |
+<a href="#" class="nosprite help">Need help?</a>
 </section>
 
 <p>
@@ -102,31 +102,31 @@ Looks perfect!  Only one problem.  There are three images.  For each image, a we
 <h3>Three Links, With CSS Sprites</h3>
 
 <p>
-You can <a href='<?=$docroot?>'>combine all these images</a> using a <a href='<?=$docroot?>'>CSS sprite generator</a>.  Done?  OK, now we have a nice combined image:
+You can <a href="&lt;?=$docroot?&gt;">combine all these images</a> using a <a href="&lt;?=$docroot?&gt;">CSS sprite generator</a>.  Done?  OK, now we have a nice combined image:
 </p>
 
-<section class='demo images viewsource'>
-<img src='icon.png' />
+<section class="demo images viewsource">
+<img src="icon.png" />
 </section>
 
 <p>
 We can't just set the background image on all of them to icon.png.  It would look like this:
 </p>
 
-<section class='demo viewsource'>
-<a href='#' class='sprite'>Delete an item</a> |
-<a href='#' class='sprite'>Contact us</a> |
-<a href='#' class='sprite'>Need help?</a>
+<section class="demo viewsource">
+<a href="#" class="sprite">Delete an item</a> |
+<a href="#" class="sprite">Contact us</a> |
+<a href="#" class="sprite">Need help?</a>
 </section>
 
 <p>
 <strong>That doesn't look quite right...</strong> See that setting the background image to "top left" causes each link to display the top image in our sprite (in this case, the delete image).  This is the extra work we need to do for sprites.  We need to use the offsets to position the background image properly: 
 </p>
 
-<section id='sprite-demo' class='demo viewsource'>
-<a href='#' class='sprite delete'>Delete an item</a> |
-<a href='#' class='sprite group'>Contact us</a> |
-<a href='#' class='sprite help'>Need help?</a>
+<section id="sprite-demo" class="demo viewsource">
+<a href="#" class="sprite delete">Delete an item</a> |
+<a href="#" class="sprite group">Contact us</a> |
+<a href="#" class="sprite help">Need help?</a>
 </section>
 
 <!--
@@ -144,15 +144,13 @@ If you want to <a href='<?=$docroot?>'>generate CSS sprites</a>, check out Insta
 <p>Here are some popular CSS Sprite articles with more explanations, examples, and links:</p> 
 
 <ul>
-<li><a href='http://www.alistapart.com/articles/sprites'>A List Apart</a></li>
-<li><a href='http://www.smashingmagazine.com/2009/04/27/the-mystery-of-css-sprites-techniques-tools-and-tutorials/'>Smashing Magazine</a></li>
-<li><a href='http://developer.yahoo.com/performance/rules.html'>Yahoo Developer Network</a></li>
-<li><a href='http://code.google.com/speed/page-speed/docs/rtt.html#SpriteImages'>Google Page Speed</a></li>
+<li><a href="http://www.alistapart.com/articles/sprites">A List Apart</a></li>
+<li><a href="http://www.smashingmagazine.com/2009/04/27/the-mystery-of-css-sprites-techniques-tools-and-tutorials/">Smashing Magazine</a></li>
+<li><a href="http://developer.yahoo.com/performance/rules.html">Yahoo Developer Network</a></li>
+<li><a href="http://code.google.com/speed/page-speed/docs/rtt.html#SpriteImages">Google Page Speed</a></li>
 </ul>
 
 </div>
-
-
 
 
 </section>
@@ -160,7 +158,7 @@ If you want to <a href='<?=$docroot?>'>generate CSS sprites</a>, check out Insta
 </section>
 
 <script src="scripts/jquery-1.6.5.js"></script>
-<script type="text/javascript" src="scripts/site.js?v=2016-11-30T13:26:53-08:00"></script>
+<script type="text/javascript" src="scripts/site.js?v=2016-11-30T14:07:20-08:00"></script>
 
 <script type="text/javascript">
   var _gaq = _gaq || [];
