@@ -3,6 +3,7 @@ layout: post
 title: Right Aligned Sprites
 description: Right aligned css sprites are used when you want an icon right aligned next to long blocks of text. 
 example: true
+relative: ../
 ---
 
 {{ page.title }}
