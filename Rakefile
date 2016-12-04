@@ -22,6 +22,7 @@ task :build do
   system("rm -R site-build")
   system("jekyll build")
   system("cp site/.htaccess site-build/")
+  system("cp CNAME site-build/")
   system("cp " + APP_PATH + " " + DEV_APP_PATH);
   
   app = File.read APP_PATH
