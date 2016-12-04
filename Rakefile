@@ -1,5 +1,7 @@
 require 'rubygems'
 
+# rake build && git commit -am 'build' && git push origin master && rake deploy
+
 HEADER = /((^\s*\/\/.*\n)+)/  
 SCRIPTS = /<script class='dev' src='(.*)'><\/script>/
 SCRIPTS2 = /(<script class='dev'.*><\/script>\s)/
