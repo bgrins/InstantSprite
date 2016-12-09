@@ -472,8 +472,8 @@ sprite.init = function() {
 	elements.sort.click(function() {
 		var items = $("#added-files");
 		var sorted = items.children("li").sort(function (a, b) {
-			return $(a).children(".name").text() > $(b).children(".name").text(); }
-		);
+			return $(a).children(".name").text() > $(b).children(".name").text();
+		});
 		sorted.each(function(i, item) { items.append(item); });
 		sprite.mergefiles();
 	});
