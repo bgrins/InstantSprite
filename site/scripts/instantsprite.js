@@ -32,7 +32,8 @@ var elements = sprite.elements = {
 	app: '#app',
 	noapp: '#noapp',
 	progress: '#progress',
-	intro: '#intro'
+	intro: '#intro',
+	sort: '#sort',
 };
 
 var settings = sprite.settings = {
@@ -468,6 +469,15 @@ sprite.init = function() {
 		return false;
 	});
 
+	elements.sort.click(function() {
+		var items = $("#added-files");
+		var sorted = items.children("li").sort(function (a, b) {
+			return $(a).children(".name").text() > $(b).children(".name").text(); }
+		);
+		sorted.each(function(i, item) { items.append(item); });
+		sprite.mergefiles();
+	});
+	
 	if (!settings.canExportGif) {
 		// Firefox doesn't allow exporting as gif yet.  Chrome's gif export is pretty bad
 		elements.optionExport.filter("[value=gif]").attr("disabled", "disabled").closest("label").attr("title", "Your browser does not support exporting to gif");
