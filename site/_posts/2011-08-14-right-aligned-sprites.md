@@ -3,7 +3,8 @@ layout: post
 title: Right Aligned Sprites
 description: Right aligned css sprites are used when you want an icon right aligned next to long blocks of text. 
 example: true
-relative: ../
+permalink: /articles/right-aligned-sprites/
+relative: ../../
 ---
 
 {{ page.title }}
@@ -22,7 +23,7 @@ relative: ../
 <style type='text/css' data-linked='extra-element-demo'>
 p.right-container { padding-right:20px; position:relative; }
 
-.right { position:absolute; top:0; right:0; display:block; width:16px; height:16px; background:url(../../styles/articles/sprite-vertical.png) transparent no-repeat; }
+.right { position:absolute; top:0; right:0; display:block; width:16px; height:16px; background:url(/styles/articles/sprite-vertical.png) transparent no-repeat; }
 .right.accept { background-position: 0 0; }
 .right.add { background-position: 0 -21px; }
 .right.application_cascade { background-position: 0 -42px; }
@@ -52,7 +53,7 @@ p.right-container { padding-right:20px; position:relative; }
 <style type='text/css' data-linked="after-demo">
 .right-using-after { position:relative; padding-right:20px;}
 .right-using-after:after { 
-	background:url(sprite-vertical.png) transparent no-repeat;
+	background:url(/styles/articles/sprite-vertical.png) transparent no-repeat;
 	height: 16px; 
 	width:16px; 
 	position:absolute; 

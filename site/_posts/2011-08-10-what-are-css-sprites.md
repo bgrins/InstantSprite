@@ -3,7 +3,8 @@ layout: post
 title: What are CSS Sprites?
 description: A CSS sprite is a combination of multiple images, separated with CSS.  CSS Sprites make your page more efficient by limiting the number of HTTP requests for images.
 example: true
-relative: ../
+permalink: /articles/what-are-css-sprites/
+relative: ../../
 ---
 
 {{ page.title }}
@@ -13,7 +14,7 @@ relative: ../
 
 <style type='text/css' data-linked='sprite-demo'>
 
-.sprite { background: url('../../styles/articles/icon.png') no-repeat top left; padding-left: 20px; line-height: 16px;  } 
+.sprite { background: url('/styles/articles/icon.png') no-repeat top left; padding-left: 20px; line-height: 16px;  } 
 .sprite.delete { background-position: 0px 0px;  } 
 .sprite.group { background-position: 0px -26px;  } 
 .sprite.help { background-position: 0px -52px;  } 
@@ -23,9 +24,9 @@ relative: ../
 <style type='text/css' data-linked='nosprite-demo'>
 
 .nosprite { padding-left: 20px; line-height:16px; background-repeat: no-repeat; }
-.nosprite.help { background-image: url('../../styles/articles/help.png'); }
-.nosprite.delete { background-image: url('../../styles/articles/delete.png'); }
-.nosprite.group { background-image: url('../../styles/articles/group.png'); }
+.nosprite.help { background-image: url('/styles/articles/help.png'); }
+.nosprite.delete { background-image: url('/styles/articles/delete.png'); }
+.nosprite.group { background-image: url('/styles/articles/group.png'); }
 
 </style>
 
@@ -52,7 +53,7 @@ Your links look great, but you decide spice it up a little bit with some images.
 </p>
 
 <section class='demo images viewsource'>
-<img src='../../delete.png' /> <img src='../../group.png' /> <img src='../../help.png' />
+<img src='/styles/articles/delete.png' /> <img src='/styles/articles/group.png' /> <img src='/styles/articles/help.png' />
 </section>
 
 <p>
@@ -76,7 +77,7 @@ You can <a href='<?=$docroot?>'>combine all these images</a> using a <a href='<?
 </p>
 
 <section class='demo images viewsource'>
-<img src='icon.png' />
+<img src='/styles/articles/icon.png' />
 </section>
 
 <p>
@@ -102,7 +103,7 @@ We can't just set the background image on all of them to icon.png.  It would loo
 <!--
 <h3>Ready for more?</h3>
 <p>
-The article <a href='../how-to-use-css-sprites'>How To Use CSS Sprites</a> goes into more detail about a workflow to simplify your CSS sprite usage. 
+The article <a href='../how-to-use-css-sprites'>How To Use CSS Sprites</a> goes into more detail about a workflow to simplify your CSS sprite usage.
 </p>
 
 <p>
