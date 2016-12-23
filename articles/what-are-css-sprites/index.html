@@ -6,16 +6,16 @@
    <meta name="description" content="A CSS sprite is a combination of multiple images, separated with CSS.  CSS Sprites make your page more efficient by limiting the number of HTTP requests for images.">
    <link rel="shortcut icon" href="/favicon.ico">
 
-   <!-- 2016-12-03T20:14:58-08:00 -->
-   <link rel="stylesheet" href="../styles/site.css" type="text/css" media="screen, projection" />
-   <link rel="stylesheet" href="../styles/instantsprite.css" type="text/css" media="screen, projection" />
+   <!-- 2016-12-23T16:25:14-06:00 -->
+   <link rel="stylesheet" href="../../styles/site.css" type="text/css" media="screen, projection" />
+   <link rel="stylesheet" href="../../styles/instantsprite.css" type="text/css" media="screen, projection" />
 </head>
 <body>
 
 
 <header>
 
-<h1><a href='../'>Instant Sprite</a>
+<h1><a href='../../'>Instant Sprite</a>
     <span class="desc">CSS Sprite Generator</span>
 </h1>
 
@@ -23,15 +23,15 @@
     
       
       
-        <a class="icon page_white_stack " href="../articles/">Articles</a>
+        <a class="icon page_white_stack " href="../../articles/">Articles</a>
     
       
       
-        <a class="icon help " href="../faq/">FAQ</a>
+        <a class="icon help " href="../../faq/">FAQ</a>
     
       
       
-        <a class="icon comments " href="../feedback/">Feedback</a>
+        <a class="icon comments " href="../../feedback/">Feedback</a>
     
 </div>
 </header>
@@ -44,7 +44,7 @@
 
 <style type="text/css" data-linked="sprite-demo">
 
-.sprite { background: url('../../styles/articles/icon.png') no-repeat top left; padding-left: 20px; line-height: 16px;  } 
+.sprite { background: url('/styles/articles/icon.png') no-repeat top left; padding-left: 20px; line-height: 16px;  } 
 .sprite.delete { background-position: 0px 0px;  } 
 .sprite.group { background-position: 0px -26px;  } 
 .sprite.help { background-position: 0px -52px;  } 
@@ -54,9 +54,9 @@
 <style type="text/css" data-linked="nosprite-demo">
 
 .nosprite { padding-left: 20px; line-height:16px; background-repeat: no-repeat; }
-.nosprite.help { background-image: url('../../styles/articles/help.png'); }
-.nosprite.delete { background-image: url('../../styles/articles/delete.png'); }
-.nosprite.group { background-image: url('../../styles/articles/group.png'); }
+.nosprite.help { background-image: url('/styles/articles/help.png'); }
+.nosprite.delete { background-image: url('/styles/articles/delete.png'); }
+.nosprite.group { background-image: url('/styles/articles/group.png'); }
 
 </style>
 
@@ -83,7 +83,7 @@ Your links look great, but you decide spice it up a little bit with some images.
 </p>
 
 <section class="demo images viewsource">
-<img src="../../delete.png" /> <img src="../../group.png" /> <img src="../../help.png" />
+<img src="/styles/articles/delete.png" /> <img src="/styles/articles/group.png" /> <img src="/styles/articles/help.png" />
 </section>
 
 <p>
@@ -107,7 +107,7 @@ You can <a href="&lt;?=$docroot?&gt;">combine all these images</a> using a <a hr
 </p>
 
 <section class="demo images viewsource">
-<img src="icon.png" />
+<img src="/styles/articles/icon.png" />
 </section>
 
 <p>
@@ -133,7 +133,7 @@ We can't just set the background image on all of them to icon.png.  It would loo
 <!--
 <h3>Ready for more?</h3>
 <p>
-The article <a href='../how-to-use-css-sprites'>How To Use CSS Sprites</a> goes into more detail about a workflow to simplify your CSS sprite usage. 
+The article <a href='../how-to-use-css-sprites'>How To Use CSS Sprites</a> goes into more detail about a workflow to simplify your CSS sprite usage.
 </p>
 
 <p>
@@ -158,8 +158,8 @@ If you want to <a href='<?=$docroot?>'>generate CSS sprites</a>, check out Insta
 
 </section>
 
-<script src="../scripts/jquery-1.6.5.js"></script>
-<script type="text/javascript" src="../scripts/site.js?v=2016-12-03T20:14:58-08:00"></script>
+<script src="../../scripts/jquery-1.6.2.js"></script>
+<script type="text/javascript" src="../../scripts/site.js?v=2016-12-23T16:25:14-06:00"></script>
 
 <script type="text/javascript">
   var _gaq = _gaq || [];
