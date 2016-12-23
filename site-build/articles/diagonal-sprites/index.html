@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>Diagonal Sprites - Instant Sprite</title>
+   <meta name="description" content="Diagonal CSS sprites can be good for top left aligning sprites to long blocks of text that works cross browser with no extra markup. Best to use small icons with low offsets to prevent using too much memory, as the image dimensions are large.">
+   <link rel="shortcut icon" href="/favicon.ico">
+
+   <!-- 2016-12-23T16:25:14-06:00 -->
+   <link rel="stylesheet" href="../../styles/site.css" type="text/css" media="screen, projection" />
+   <link rel="stylesheet" href="../../styles/instantsprite.css" type="text/css" media="screen, projection" />
+</head>
+<body>
+
+
+<header>
+
+<h1><a href='../../'>Instant Sprite</a>
+    <span class="desc">CSS Sprite Generator</span>
+</h1>
+
+<div class='links'>
+    
+      
+      
+        <a class="icon page_white_stack " href="../../articles/">Articles</a>
+    
+      
+      
+        <a class="icon help " href="../../faq/">FAQ</a>
+    
+      
+      
+        <a class="icon comments " href="../../feedback/">Feedback</a>
+    
+</div>
+</header>
+
+<section>
+  <section id="example">
+<h1 id="diagonal-sprites">Diagonal Sprites</h1>
+
+<div>
+
+<style type="text/css">
+.spritediagonal { position:relative; padding-left:20px; background:url(/styles/articles/sprite-diagonal.png) transparent no-repeat; }
+.spritediagonal.accept { background-position: -182px 0;  }
+.spritediagonal.application_cascade { background-position: -156px -26px;  }
+.spritediagonal.add { background-position: -130px -52px;  }
+.spritediagonal.application_delete { background-position: -104px -78px;  }
+.spritediagonal.application_double { background-position: -78px -104px;  }
+.spritediagonal.anchor { background-position: -52px -130px;  }
+.spritediagonal.application_add { background-position: -26px -156px;  }
+.spritediagonal.application_edit { background-position: 0 -182px;  }
+</style>
+
+<em>This is an experimental example.  It uses diagonal sprites.  Credit for the idea goes to <a href="http://www.aaronbarker.net/2010/07/diagonal-sprites/">Aaron Barker</a></em>
+
+<p class="spritediagonal add">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+
+<p class="spritediagonal accept">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+
+<p class="spritediagonal anchor">Lorem Ipsum...</p>
+
+</div>
+
+</section>
+
+</section>
+
+<script src="../../scripts/jquery-1.6.2.js"></script>
+<script type="text/javascript" src="../../scripts/site.js?v=2016-12-23T16:25:14-06:00"></script>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-8259845-3']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</body>
+</html>

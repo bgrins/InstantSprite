@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Instant Sprite - Generate CSS Sprites Instantly</title>
+	<meta name="description" content="Instant Sprite - The fastest CSS Sprite Generator.  It is entirely browser based - drag and drop images onto the page,  rearrange them, change CSS classes, and output the image in multiple formats.">
+    <meta name="google-site-verification" content="1rOwxJ8bgnwM_uI-aanCo8t15AHcD5bOdnPOiM55IdM" />
+	<link type="text/css" media="screen" rel="stylesheet" href="styles/instantsprite.css">
+    <link rel="shortcut icon" href="/favicon.ico">
+	<script class='dev' src='scripts/jquery-1.6.2.js'></script>
+	<script class='dev' src='scripts/common.js'></script>
+	<script class='dev' src='scripts/filereader.js'></script>
+	<script class='dev' src='scripts/jquery.tmpl.min.js'></script>
+	<script class='dev' src='scripts/jquery-ui-1.8.5.custom.min.js'></script>
+    <script class='dev' src='scripts/jquery.tinytooltip.js'></script>
+    <script class='dev' src='scripts/ZeroClipboard.js'></script>
+	<script class='dev' src='scripts/instantsprite.js'></script>
+
+	<!--livescript-->
+	<script type='text/javascript'>$(sprite.init);</script>
+</head>
+<body>
+
+<header>
+<h1><a href='http://instantsprite.com'>Instant Sprite</a>
+    <span class="desc">CSS Sprite Generator</span>
+</h1>
+<div class='links'>
+<a href='http://twitter.com/bgrins'>@bgrins</a>
+<a class='icon github' target='_blank' href='http://github.com/bgrins/InstantSprite/' title='Follow the project to be notified of changes, and discuss possible features and issues.'>Follow!</a>
+<a class='icon page_white_stack' href='articles/'>Articles</a>
+<a class='icon help' href='faq/'>FAQ</a>
+<a class='icon comments' href='feedback/'>Feedback</a>
+</div>
+</header>
+
+<div id='app'>
+<div id='intro' class='info'>
+<em>Welcome to Instant Sprite, the fastest way for to generate CSS sprites.</em><br />All the work will be done in your browser, so don't worry about sending your images over the Internet. <br />If you feel lost or want more information about generating CSS sprites, see <a href='articles/what-are-css-sprites/' target='_blank'>what are CSS sprites</a>. Once you are ready, follow the instructions below to get started.
+</div>
+<section id='source' class='full clearfix'>
+	<div id='initialload'>Loading, please wait...<span></span></div>
+	<ul class='hide'>
+	<li><input type="file" id="fileInput" class='offscreen' multiple accept="image/*" /><a id="fileInputShortcut" class='icon computer_add' href="#">Select multiple image files</a> from your computer</li>
+	<li>Drag and drop files from your desktop onto the page</li>
+	<li><a href='#' id='fileSamples'>Use a few sample images</a> to try it out</li>
+	</ul>
+</section>
+
+<div id='sprite'>
+<section>
+    <header>Thumbnails</header>
+    <div class='help'>You can drag and drop the images to change their order in the sprite.</div>
+    <div class='content' id='files'>
+    	<ul id='file-warnings'></ul>
+    	<ul id='added-files' class='clearfix'></ul>
+    </div>
+</section>
+<section>
+    <header>Options</header>
+    <div class='content'>
+    	<form id='options'>
+    	<div class='text field'>
+    	<label for='offset'>Offset: </label>
+    	<input name="offset" id="offset" size="5" maxlength="5" type="number" min="0" step="5" value="10" /> px
+    	</div>
+    	<div class='radio field'>
+    	<span>Direction:</span>
+    	<label><input type="radio" name="direction" value="vertical" checked="checked" /><span>vertical</span></label>
+    	<label><input type="radio" name="direction" value="horizontal" /><span>horizonal</span></label>
+    	<label><input type="radio" name="direction" value="diagonal" /><span>diagonal</span></label>
+    	</div>
+    	<div class='radio field'>
+    	<span>File Type:</span>
+    	<label><input type="radio" name="export" value="png" checked="checked" /><span>png</span></label>
+    	<label><input type="radio" name="export" value="gif" /><span>gif</span></label>
+    	</div>
+    	</form>
+    </div>
+</section>
+<section>
+    <header>Sprite</header>
+    <div class='help'>Right click the image to save it to your computer.
+        <a href='#' id='openInNewWindow' class='disabled'>Open image in a new window</a> &nbsp;
+        <a href='#' id='base64Image' class='disabled'>Copy Base64</a>
+    </div>
+    <div class='content' id='result'>
+    </div>
+</section>
+<section>
+    <header>Usage</header>
+    <div class='help'>You can use a <a href='https://developer.mozilla.org/en/JavaScript/Guide/Regular_Expressions' target='_blank'>RegExp</a> object for capturing the file name.</div>
+    <div class='content'>
+    	<div id='exportCssContainer'>
+    		<div id='css-template'>
+    				<input name="css-prefix" id="css-prefix" placeholder="CSS prefix" />
+    				<input name="sprite-classname" id="sprite-classname" placeholder="sprite class name" value="sprite" />.<input name="class-prefix" id="class-prefix" placeholder="class prefix" /><input name="filename-match" id="filename-match" placeholder="filename match" value='(.*)' /><input name="class-suffix" id="class-suffix" placeholder="class suffix" />
+    				{ ... }
+    		</div>
+    		<textarea id='exportCss' rows='15'></textarea>
+    	</div>
+
+    	<textarea id='exportHtml' rows='15'></textarea>
+    </div>
+</section>
+<section>
+    <header>Preview</header>
+    <div class='help'>This is a preview of your sprite using HTML/CSS and your image.</div>
+    <div class='content'>
+		<iframe id='preview'></iframe>
+	</div>
+</section>
+</div>
+</div>
+
+<div id='imageload'></div>
+<div id='noapp'>
+	<section>
+	<p>
+	Sorry, but your browser does not support the features necessary for Intant Sprite.
+	Here is a list of browsers that let you use Instant Sprite:
+	</p>
+	<ul>
+		<li>Chrome 6+</li>
+		<li>Firefox 3.6+</li>
+	</ul>
+	<br />
+	<p>You can read more about why this doesn't work with your browser on the <a href='faq#support'>faq page</a>.  If you feel you have gotten this message in error, please <a href='feedback/'>leave me feedback</a> telling me what browser / operating system you are using and I will look into it.</p>
+	<p>
+	- Thanks
+	</p>
+	</section>
+</div>
+
+<noscript>
+	<section>
+	<p>
+	Sorry, but your browser does not have JavaScript turned on.  In order to use Instant Sprite, please use one of these browsers (with JavaScript enabled):
+	</p>
+	<ul>
+		<li>Chrome 6+</li>
+		<li>Firefox 3.6+</li>
+	</ul>
+	<p>
+	You can read more about why this doesn't work with your browser on the <a href='faq#support'>faq page</a>
+	</p>
+
+	</section>
+</noscript>
+
+<div id="progress"></div>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-8259845-3']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</body>
+</html>

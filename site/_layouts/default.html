@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>{{ page.title }} - Instant Sprite</title>
+   <meta name="description" content="{{ page.description }}">
+   <link rel="shortcut icon" href="/favicon.ico">
+
+   <!-- {{ site.time | date_to_xmlschema }} -->
+   <link rel="stylesheet" href="{{ page.relative }}styles/site.css" type="text/css" media="screen, projection" />
+   <link rel="stylesheet" href="{{ page.relative }}styles/instantsprite.css" type="text/css" media="screen, projection" />
+</head>
+<body>
+
+
+<header>
+
+<h1><a href='{{ page.relative }}'>Instant Sprite</a>
+    <span class="desc">CSS Sprite Generator</span>
+</h1>
+
+<div class='links'>
+    {% for link in site.navigation %}
+      {% assign current = nil %}
+      {% if page.title == link.text %}
+        {% assign current = 'current' %}
+      {% endif %}
+        <a class="icon {{ link.class }} {{ current }}" href="{{ page.relative }}{{ link.url }}">{{ link.text }}</a>
+    {% endfor %}
+</div>
+</header>
+
+<section>
+  {{ content }}
+</section>
+
+<script src="{{ page.relative }}scripts/jquery-1.6.2.js"></script>
+<script type="text/javascript" src="{{ page.relative }}scripts/site.js?v={{ site.time | date_to_xmlschema }}"></script>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-8259845-3']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</body>
+</html>
